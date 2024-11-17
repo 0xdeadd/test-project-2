@@ -1,0 +1,32 @@
+{
+  "fixtures": [
+    {
+      "name": "prod_freelancer",
+      "path": "/v1/products",
+      "method": "post",
+      "params": {
+        "name": "Freelancer",
+        "description": "Professional subscription plan with all features included",
+        "active": true,
+        "metadata": {
+          "index": 0
+        }
+      }
+    },
+    {
+      "name": "price_freelancer_month",
+      "path": "/v1/prices",
+      "method": "post",
+      "params": {
+        "product": "${prod_freelancer:id}",
+        "currency": "usd",
+        "unit_amount": 2000,
+        "active": true,
+        "recurring": {
+          "interval": "month"
+        }
+      }
+    }
+  ]
+}
+
